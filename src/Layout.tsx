@@ -7,7 +7,12 @@ export const Layout = () => {
 
         <>
             <Navbar />
-            <Outlet />
+
+            <section className="container">
+
+                <Outlet />
+
+            </section>
         </>
     );
 }

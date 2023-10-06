@@ -1,12 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../Layout";
 
-import { DcPage , MarvelPage } from '../heroes/index';
+import { DcPage , MarvelPage , SearchHeroesPage, SingleHeroePage } from '../heroes/index';
 import { LoginPage } from "../auth/index";
 
 export const router = createBrowserRouter([
 
 
+    {
+
+      path: 'login',
+      element: <LoginPage />
+    },
     {
       element: <Layout />,
       children: [
@@ -19,14 +24,20 @@ export const router = createBrowserRouter([
           element: <DcPage />,
         },
         {
+          path: "/search",
+          element: <SearchHeroesPage />,
+        },
+        {
+          path: "/heroe",
+          element: <SingleHeroePage />,
+        },
+        {
           path: "/login",
           element: <LoginPage />
         },
         {
           path: "/",
           element: <MarvelPage />,
-      
-      
         },
       ]
     }

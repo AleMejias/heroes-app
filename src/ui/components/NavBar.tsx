@@ -3,10 +3,17 @@ import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
 
-    const setClassLinkActive = ( state = false ) => {
-
+    const setClassLinkActive = ( state = false , path: string) => {
         const className = 'nav-item nav-link';
-        return state ? `${className} active` : className;
+        const currentPath = window.location.pathname;
+
+        if( currentPath === '/' && path === '/marvel') {
+            return `${className} active`;
+        } else if( state ) {
+            return `${className} active`;
+        } else {
+            return className;
+        }
     };
 
 
@@ -18,17 +25,24 @@ export const Navbar = () => {
                 <div className="navbar-nav">
 
                     <NavLink 
-                        className={({ isActive }) => setClassLinkActive(isActive)} 
+                        className={({ isActive }) => setClassLinkActive(isActive,"/marvel")} 
                         to="/marvel"
                     >
                         Marvel
                     </NavLink>
 
                     <NavLink 
-                        className={({ isActive }) => setClassLinkActive(isActive)} 
+                        className={({ isActive }) => setClassLinkActive(isActive,"/dc")} 
                         to="/dc"
                     >
                         DC
+                    </NavLink>
+
+                    <NavLink 
+                        className={({ isActive }) => setClassLinkActive(isActive,"/search")} 
+                        to="/search"
+                    >
+                        Search
                     </NavLink>
                 </div>
             </div>
