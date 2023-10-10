@@ -1,8 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
 
+    const navigate = useNavigate();
     const setClassLinkActive = ( state = false , path: string) => {
         const className = 'nav-item nav-link';
         const currentPath = window.location.pathname;
@@ -14,6 +15,12 @@ export const Navbar = () => {
         } else {
             return className;
         }
+    };
+
+    const handleLogout = (  ) => {
+        navigate('/login',{
+            replace: true
+        });
     };
 
 
@@ -54,7 +61,10 @@ export const Navbar = () => {
                         Alejandro
                     </span>
 
-                    <button className='nav-item nav-link btn'>
+                    <button 
+                        className='nav-item nav-link btn'
+                        onClick={ handleLogout }
+                    >
                         Logout
                     </button>
 

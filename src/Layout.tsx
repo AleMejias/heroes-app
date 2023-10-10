@@ -8,7 +8,7 @@ export const Layout = () => {
         <>
             <Navbar />
 
-            <section className="container">
+            <section className="container mt-2">
 
                 <Outlet />
 
