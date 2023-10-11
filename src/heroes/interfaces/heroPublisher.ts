@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-interface HeroList {
+export interface HeroPublisher {
 
     publisher:         string;
 }
+

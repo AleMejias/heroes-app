@@ -1,1 +1,2 @@
-export * from './heroList';
+export * from './heroPublisher';
+export * from './hero';
